@@ -2,7 +2,7 @@
 import { useTheme } from '@proj-airi/ui'
 import { RouterLink } from 'vue-router'
 
-import LogoDark from '../../assets/logo-dark.svg'
+import DemoLogo from '../../assets/An-Nan_Hospital_logo.gif'
 import Logo from '../../assets/logo.svg'
 
 const { isDark: dark } = useTheme()
@@ -14,13 +14,15 @@ const { isDark: dark } = useTheme()
     w-max items-center gap-2 px-2 text-nowrap text-2xl outline-none
   >
     <template v-if="dark">
-      <img :src="LogoDark" h-8 w-8 class="theme-colored">
+      <!-- <img :src="LogoDark" h-8 w-8 class="theme-colored"> -->
+      <img :src="DemoLogo" h-8 w-8>
     </template>
     <template v-else>
       <img :src="Logo" h-8 w-8 class="theme-colored">
     </template>
     <div translate-y="[2px]" font-quicksand font-semibold>
-      <span>AIRI</span>
+      <!-- <span>AIRI</span> -->
+      <span>安南醫院</span>
     </div>
   </RouterLink>
 </template>
