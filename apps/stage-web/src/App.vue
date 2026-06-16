@@ -1,7 +1,14 @@
 <script setup lang="ts">
-import { OnboardingDialog, OnboardingStepAnalyticsNotice, ToasterRoot } from '@proj-airi/stage-ui/components'
+import {
+  // OnboardingDialog,
+  // OnboardingStepAnalyticsNotice,
+  ToasterRoot,
+} from '@proj-airi/stage-ui/components'
 import { useInferencePreload } from '@proj-airi/stage-ui/composables'
-import { isPosthogAvailableInBuild, useSharedAnalyticsStore } from '@proj-airi/stage-ui/stores/analytics'
+import {
+  // isPosthogAvailableInBuild,
+  useSharedAnalyticsStore,
+} from '@proj-airi/stage-ui/stores/analytics'
 import { useCharacterOrchestratorStore } from '@proj-airi/stage-ui/stores/character'
 import { useChatSessionStore } from '@proj-airi/stage-ui/stores/chat/session-store'
 import { useDisplayModelsStore } from '@proj-airi/stage-ui/stores/display-models'
@@ -34,7 +41,7 @@ const chatSessionStore = useChatSessionStore()
 const serverChannelStore = useModsServerChannelStore()
 const characterOrchestratorStore = useCharacterOrchestratorStore()
 const settingsAudioDeviceStore = useSettingsAudioDevice()
-const { showingSetup } = storeToRefs(onboardingStore)
+// const { showingSetup } = storeToRefs(onboardingStore)
 const { isDark } = useTheme()
 const cardStore = useAiriCardStore()
 const analyticsStore = useSharedAnalyticsStore()
@@ -62,11 +69,11 @@ const colors = computed(() => {
   return [primaryColor.value, secondaryColor.value, tertiaryColor.value, isDark.value ? '#121212' : '#FFFFFF']
 })
 
-const onboardingExtraSteps = computed(() => {
-  return isPosthogAvailableInBuild()
-    ? [{ id: 'analytics-notice', component: OnboardingStepAnalyticsNotice }]
-    : []
-})
+// const onboardingExtraSteps = computed(() => {
+//   return isPosthogAvailableInBuild()
+//     ? [{ id: 'analytics-notice', component: OnboardingStepAnalyticsNotice }]
+//     : []
+// })
 
 watch(settings.language, () => {
   i18n.locale.value = settings.language.value
@@ -108,13 +115,13 @@ onUnmounted(() => {
 })
 
 // Handle first-time setup events
-function handleSetupConfigured() {
-  onboardingStore.markSetupCompleted()
-}
+// function handleSetupConfigured() {
+//   onboardingStore.markSetupCompleted()
+// }
 
-function handleSetupSkipped() {
-  onboardingStore.markSetupSkipped()
-}
+// function handleSetupSkipped() {
+//   onboardingStore.markSetupSkipped()
+// }
 </script>
 
 <template>
@@ -142,12 +149,12 @@ function handleSetupSkipped() {
   </ToasterRoot>
 
   <!-- First Time Setup Dialog -->
-  <OnboardingDialog
+  <!-- <OnboardingDialog
     v-model="showingSetup"
     :extra-steps="onboardingExtraSteps"
     @configured="handleSetupConfigured"
     @skipped="handleSetupSkipped"
-  />
+  /> -->
 
   <PerformanceOverlay />
 </template>

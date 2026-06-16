@@ -11,7 +11,7 @@ import Basemove, { createS3Provider } from 'unplugin-basemove/vite'
 import Info from 'unplugin-info/vite'
 import Yaml from 'unplugin-yaml/vite'
 import Mkcert from 'vite-plugin-mkcert'
-import VueDevTools from 'vite-plugin-vue-devtools'
+// import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
 import VueMacros from 'vue-macros/vite'
 import VueRouter from 'vue-router/vite'
@@ -218,7 +218,7 @@ export default defineConfig({
     }),
 
     // https://github.com/webfansplz/vite-plugin-vue-devtools
-    VueDevTools(),
+    // VueDevTools(),
 
     DownloadLive2DSDK(),
     Download('https://dist.ayaka.moe/live2d-models/hiyori_free_zh.zip', 'hiyori_free_zh.zip', 'live2d/models', { parentDir: stageUIAssetsRoot, cacheDir: sharedCacheDir }),
