@@ -25,7 +25,6 @@ import { RouterLink } from 'vue-router'
 
 import ViewControls from '../Layouts/InteractiveArea/Actions/ViewControls.vue'
 import IndicatorMicVolume from '../Widgets/IndicatorMicVolume.vue'
-import ActionAbout from './InteractiveArea/Actions/About.vue'
 
 import { useTranscriptions } from '../../composables/use-transcriptions'
 import { useStopSpeakingButton } from '../../composables/useStopSpeakingButton'
@@ -195,7 +194,7 @@ onMounted(() => {
       </div>
       <div translate-y="[-100%]" absolute right-0 px-3 pb-3 font-sans>
         <div flex="~ col" gap-1>
-          <ActionAbout />
+          <!-- <ActionAbout /> -->
           <button
             border="2 solid neutral-100/60 dark:neutral-800/30"
             bg="neutral-50/70 dark:neutral-800/70"
